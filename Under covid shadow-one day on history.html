@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Display a map on a webpage</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%;width: 100%;height:absolute  }
+
+#topic { position: absolute; color: black;background-color: gray; opacity: 1}
+#subtitle { position:absolute;opacity: 0.7;background-color: grapadding:5px; bottom:20px; right:10px;, width:100px; height: 200px; background-color: gray}
+
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div id="topic"><h2>Under Covid-19 shadow: One day on the earth</h2></div><br>
+
+
+<div id="subtitle">
+    <h4>The beginning of a nightmare</h4>
+   <a href="#" onclick="map.setLayoutProperty('At the beginning','visibility','visible')">Comfired cases on 22/01/2020</a>  <br>
+   <a href="#" onclick="map.setLayoutProperty('At the beginning','visibility','none')">Clear it</a>  <br>
+    <a href="#" onclick="map.setLayoutProperty('Global Situation-Mid term','visibility','visible')">Comfired cases on 23/09/2020</a>  <br>
+    <a href="#" onclick="map.setLayoutProperty('Global Situation-Mid term','visibility','none')">Clear it</a>  <br>
+     <a href="#" onclick="map.setLayoutProperty('Global Situation-Current','visibility','visible')">Comfired cases on 31/03/2021</a>  <br>
+     <a href="#" onclick="map.setLayoutProperty('Global Situation-Current','visibility','none')">Clear it</a>  <br>
+
+
+</div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoicWloYW5ncWl1IiwiYSI6ImNranZhZmlhZDAwaDEycHFxYXlxZnpvaXkifQ.X3RSvZqPozj56EXKgiKvTQ';
+    var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/qihangqiu/ckmxwiybg18b217nsvl6vavtb', // style URL
+        center: [95.6253722715241, 53.55751859349195], // starting position [lng, lat]
+        zoom: 2 // starting zoom
+    });
+
+    map.addControl(new mapboxgl.NavigationControl());
+</script>
+
+</body>
+</html>
